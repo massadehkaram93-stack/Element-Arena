@@ -1,0 +1,944 @@
+.main-screen {
+    direction: rtl;
+    width : 100% ;
+    height : 100vh ;
+}
+
+.main-screen .title {
+    text-align: center ;
+    margin-top : 50px ;
+}
+
+.main-screen input {
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    font-size: large;
+    width : 20% ;
+    margin : 20px ;
+    margin-top : 160px ;
+    padding : 12px 30px ;
+}
+
+.main-screen button {
+    display: flex ;
+    justify-self: center;
+    justify-content: center;
+    width: 10% ;
+    margin-top : 30px ;
+    padding : 12px 30px ;
+}
+
+/*--- ^ main screen section ^ ---*/
+
+.loading-screen {
+    display : grid ;
+    grid-template-rows: repeat(2,1fr);
+    grid-template-areas: "title" "cont";
+    justify-content: center;
+    align-items: center;
+    width : 100% ;
+    height : 100vh ;
+}
+
+.loading-screen .title {
+    grid-area: title;
+    display: flex;
+    align-self: end;
+}
+
+.loading-screen .loud {
+    grid-area: cont;
+    display: flex;
+    justify-content: center;
+    align-self: start;
+    align-items: center;
+    width: 100%;
+    height: 25% ;
+}
+
+.loading-screen .loud div {
+    width : 20px ;
+    height: 20px ;
+    margin: 5px ;
+}
+
+/*--- ^ loading screen section ^ ---*/
+
+.game-screen {
+    position: relative;
+    width : 100% ;
+    height : 100vh ;
+}
+
+.game-screen .user-name {
+    position: absolute;
+    width : max-content ;
+    left : 0 ; 
+    top : 0 ;
+    margin : 20px ;
+}
+
+.game-screen .side-menu {
+    position: absolute ;
+    width : max-content ;
+    height: max-content ;
+    top : 0 ;
+    right : 0 ;
+    margin-top : 20px ;
+    margin-right : 20px ;
+}
+
+.game-screen .side-menu form {
+    display: flex ;
+    align-items: center ;
+    justify-content: end ;
+    width :fit-content ;
+}
+
+.game-screen .side-menu form input {
+    width : 50px ;
+    height : 30px ;
+    text-align: center;
+}
+
+/*--- ^ Side Menu (Money)^ ---*/
+
+.game-screen .side-menu .leaderboard-menu {
+    margin-top : 100px ;
+}
+
+.game-screen .side-menu .leaderboard-menu button {
+    padding : 12px 30px ;
+    margin : 5px ;
+}
+
+.game-screen .leaderboard {
+    position: absolute;
+    transform: translateX(2000px) ;
+    -webkit-transform: translateX(2000px) ;
+    -moz-transform: translateX(2000px) ;
+    -ms-transform: translateX(2000px) ;
+    -o-transform: translateX(2000px) ;
+    right: 0 ;
+    top: 0 ;
+    margin-top: 100px ;
+    width: 100vh ;
+    height: 80vh ;
+    z-index: 100;
+}
+
+.game-screen .leaderboard button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large ;
+    width : 8% ;
+    padding : 12px 30px ;
+}
+
+.game-screen .leaderboard .btns {
+    display : flex ;
+    justify-self: end;
+    align-self: start;
+    margin-right : 40px ;
+    margin-top : -40px ;
+}
+
+.game-screen .leaderboard .btns li {
+    margin : 10px ;
+    padding : 6px 15px ;
+}
+
+.game-screen .leaderboard .platforms {
+    display : flex;
+    align-items: end ;
+    justify-content: center;
+    gap : 10px ;
+    width : 100% ;
+    height : 92% ;
+}
+
+.game-screen .leaderboard .platforms li {
+    display: flex ;
+    justify-content: center;
+    align-items: start;
+    width : 30% ;
+    box-shadow: inset 0px -60px 50px  var(--main-shadow), 
+    0px 60px 40px var(--main-shadow);
+}
+
+.game-screen .leaderboard .platforms .first {
+    height : 70% ;
+}
+
+.game-screen .leaderboard .platforms .scound {
+    height : 50% ;
+}
+
+.game-screen .leaderboard .platforms .theerd {
+    height : 30% ;
+}
+
+/*--- ^ Side Menu (Leaderboard)^ ---*/
+
+.game-screen .ui-overlay {
+    width : 100% ;
+    height : 100vh ;
+    z-index: 99 ;
+}
+
+.game-screen .side-menu .shop-menu {
+    margin-top : 30px ;
+}
+
+.game-screen .side-menu .shop-menu  button {
+    padding : 12px 30px ;
+    margin : 5px ;
+    width : 90% ;
+}
+
+.game-screen .shop {
+    position: absolute;
+    transform: translateX(2000px) ;
+    -webkit-transform: translateX(2000px) ;
+    -moz-transform: translateX(2000px) ;
+    -ms-transform: translateX(2000px) ;
+    -o-transform: translateX(2000px) ;
+    right: 0 ;
+    top: 0 ;
+    margin-top: 100px ;
+    width: 100vh ;
+    height: 80vh ;
+    z-index: 100;
+}
+
+.game-screen .shop .close-shop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large ;
+    width : 8% ;
+    padding : 12px 30px ;
+}
+
+.game-screen .shop h1 {
+    display: flex ;
+    justify-self: center ;
+    margin-top : -25px ;
+}
+
+.game-screen .shop .shop-body {
+    display: grid ;
+    overflow-y: auto ;
+    grid-template-columns: repeat(3,1fr);
+    padding-bottom: 80px !important ;
+    width : 100% ;
+    height : 100% ;
+}
+
+.game-screen .shop .shop-body .card {
+    position: relative;
+    display : grid ;
+    grid-template-rows: 1fr auto ;
+    grid-template-areas: "img" "btn";
+    overflow: visible ;
+    justify-content: center; 
+    height : max-content ;
+    width : calc(max-content + 10px) ;
+    margin : 10px ;
+}
+
+.game-screen .shop .shop-body .card .buy-btn {
+    display : grid ;
+    grid-area: btn ;
+    justify-self : center;
+    margin-top : 5px ;
+    margin-bottom : 5px ;
+    width : 60% ;
+    padding : 6px 15px ;
+} 
+
+.game-screen .shop .shop-body .card .info {
+    position: relative;
+    margin-top : -31px;
+    width : 25px ;
+    height :  25px ;
+}
+
+/*--- ^ Side Menu (Shop)^ ---*/
+
+.game-screen .side-menu .storage-menu {
+    margin-top : 30px ;
+}
+
+.game-screen .side-menu .storage-menu  button {
+    padding : 12px 30px ;
+    margin : 5px ;
+    width : 90% ;
+}
+
+.game-screen .storage {
+    position: absolute;
+    transform: translateX(2000px) ;
+    -webkit-transform: translateX(2000px) ;
+    -moz-transform: translateX(2000px) ;
+    -ms-transform: translateX(2000px) ;
+    -o-transform: translateX(2000px) ;
+    right: 0 ;
+    top: 0 ;
+    margin-top: 100px ;
+    width: 100vh ;
+    height: 80vh ;
+    z-index: 100;
+}
+
+.game-screen .storage .close-storage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large ;
+    width : 8% ;
+    padding : 12px 30px ;
+}
+
+.game-screen .storage h1 {
+    display: flex ;
+    justify-self: center ;
+    margin-top : -25px ;
+}
+
+.game-screen .storage .storage-body {
+    display: grid ;
+    overflow-y: auto ;
+    grid-template-columns: repeat(3,1fr);
+    padding-bottom: 80px !important ;
+    width : 100% ;
+    height : 100% ;
+}
+
+.game-screen .storage .storage-body .card::before {
+    content: attr(data-number) " / " attr(data-amount) ;
+    position: absolute;
+    right : 0 ;
+    bottom : 0 ;
+}
+
+.game-screen .storage .storage-body .card {
+    position: relative;
+    display : grid ;
+    grid-template-rows: 1fr auto ;
+    grid-template-areas: "img" "btn";
+    overflow: visible ;
+    justify-content: center; 
+    height : max-content ;
+    width : calc(max-content + 10px) ;
+    margin : 10px ;
+}
+
+.game-screen .storage .storage-body .card .use-btn {
+    display : grid ;
+    grid-area: btn ;
+    justify-self : center;
+    margin-top : 5px ;
+    margin-bottom : 5px ;
+    width : 60% ;
+    padding : 6px 15px ;
+} 
+
+.game-screen .storage .storage-body .card .info {
+    position: relative;
+    margin-top : -31px;
+    width : 25px ;
+    height :  25px ;
+}
+
+
+/*--- ^ Side Menu (Storage)^ ---*/
+
+
+.game-screen .timer.none {
+    display : none ;
+}
+
+.game-screen .timer {
+    position: absolute ;
+    top : 0 ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    padding: 10px 20px;
+    margin : 20px 48%  ;
+} 
+
+.game-screen .powers-menu.none {
+    display : none ;
+}
+
+.game-screen .powers-menu[data-status="easy"] ,
+.game-screen .powers-menu[data-status="middly"] ,
+.game-screen .powers-menu[data-status="hard"]  {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content ;
+    top : 0; 
+    margin : 15px 70% ;
+    padding: 5px 5px;
+}
+
+.game-screen .powers-menu[data-status="easy"] div ,
+.game-screen .powers-menu[data-status="middly"] div { 
+    width : 65px ;
+    height : 65px ;
+    margin : 0px 10px ;
+}
+
+.game-screen .powers-menu[data-status="easy"] div img ,
+.game-screen .powers-menu[data-status="middly"] div img {
+    width : 65px ;
+    height : 65px ;
+}
+
+.game-screen .powers-menu[data-status="hard"] div  {
+    width : 55px ;
+    height : 55px ;
+    margin : 0px 10px ;
+}
+
+.game-screen .powers-menu[data-status="hard"] div img {
+    width : 55px ;
+    height : 55px ;
+}
+
+.game-screen .cards-space {
+    position: absolute  ;
+    bottom : 0 ;
+    right : 0 ; 
+    left : 0 ;
+    width : 80% ;
+    height : 80vh ;
+    margin-left : 10px ;
+    margin-bottom : 10px ;
+}
+
+.game-screen .cards-space[data-status="chose-difficulte"] .chose-difficulte {
+    display : flex ;
+    width : 100% ;
+    margin-top : 200px ;
+    margin-left : 200px ;
+}
+
+.game-screen .cards-space .chose-difficulte {
+    display : none ;
+}
+
+.game-screen .cards-space[data-status="chose-difficulte"] .chose-difficulte {
+    display : flex ;
+    justify-content: center ;
+}
+
+.game-screen .cards-space[data-status="grid4*2"] {
+    display : grid ;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(2,1fr);
+    grid-template-areas: card;
+    width : 97% ;
+    height : 80vh ;
+    margin : 20px ;
+}
+
+
+.game-screen .cards-space[data-status="grid6*2"] {
+    display : grid ;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: repeat(2,1fr);
+    grid-template-areas: card;
+    width : 97% ;
+    height : 80vh ;
+    margin : 20px ;
+}
+
+.game-screen .cards-space[data-status="grid8*2"] {
+    display : grid ;
+    grid-template-columns: repeat(8,1fr);
+    grid-template-rows: repeat(2,1fr);
+    grid-template-areas: card;
+    width : 97% ;
+    height : 80vh ;
+    margin : 20px ;
+}   
+
+.game-screen .cards-space[data-status="win-screen"] ,
+.game-screen .cards-space[data-status="lose-screen"] {
+    display : flex ;
+    justify-content: center ;
+    align-items: center;
+    width : 97% ;
+    height : 80vh ;
+    margin : 20px ;
+}
+
+.game-screen .cards-space .chose-difficulte .title {
+    height : fit-content ;
+    width: fit-content ;
+    margin-right : -200px ;
+}
+
+.game-screen .cards-space .chose-difficulte ul {
+    margin-top : 80px ;
+    display: flex ;
+}
+
+.game-screen .cards-space .chose-difficulte ul li {
+    display : block ;
+    padding: 12px 30px ;
+    margin : 10px ;
+}
+
+.game-screen .cards-space .card {
+    width: 100% ;
+    height: 100% ;
+}
+
+.game-screen .cards-space .card .card-body {
+    position: relative;
+    width: 100% ;
+    height: 100% ;
+}
+
+.game-screen .cards-space .card .card-body .back  , 
+.game-screen .cards-space .card .card-body .front {
+    width: fit-content ;
+    height: fit-content  ;
+    position: absolute ;
+    right: 0 ;
+    left: 0 ;
+    top: 0 ;
+    bottom: 0 ;
+    width : 100% ;
+    height : 100% ;
+}
+
+.game-screen .cards-space .card .card-body .back img , 
+.game-screen .cards-space .card .card-body .front img {
+    width : 100% ;
+    height : 100% ;
+}
+
+.game-screen .cards-space .card .card-body .back img:hover , 
+.game-screen .cards-space .card .card-body .front img:hover {
+    cursor: pointer;
+}
+
+.game-screen .cards-space .win-screen.none {
+    display: none ;
+}
+
+.game-screen .cards-space[data-status="win-screen"] .win-screen{
+    display : flex ;
+}
+
+.game-screen .cards-space .lose-screen.none {
+    display: none ;
+}
+
+.game-screen .cards-space[data-status="lose-screen"] .lose-screen{
+    display : flex ;
+}
+
+.game-screen .cards-space .win-screen ,
+.game-screen .cards-space .lose-screen {
+    display : flex ;
+    flex-direction: column;
+    direction: rtl ;
+    width : 35% ;
+    height : 60vh ;
+    padding : 12px 30px ;
+}
+
+.game-screen .cards-space .win-screen .title ,
+.game-screen .cards-space .lose-screen .title {
+    margin-bottom : 30px ; 
+}
+
+.game-screen .cards-space .win-screen .heroP ,
+.game-screen .cards-space .lose-screen .heroP {
+    margin-bottom : 30px ;
+}
+
+.game-screen .cards-space .win-screen .time-result , 
+.game-screen .cards-space .lose-screen .time-result{
+    margin-bottom : 20px ;
+}
+
+.game-screen .cards-space .win-screen button ,
+.game-screen .cards-space .lose-screen button {
+    padding : 12px 30px ;
+}
+
+.game-screen .cards-space .win-screen .money-result ,
+.game-screen .cards-space .lose-screen .money-result{
+    margin-bottom : 60px ;
+}
+
+.game-screen .cards-space .win-screen .replay-btn ,
+.game-screen .cards-space .lose-screen .replay-btn{
+    margin-bottom : 30px ;
+}
+
+.snow {
+    position: absolute ;
+    top : -30px ;
+}
+
+/*هسا الريسبونسف حيكون تحت هاض الكومنت*/
+
+@media (max-width : 575px) {
+    .main-screen .title {
+        font-size: large ;
+    }
+
+    .main-screen input {
+        width : 80% ;
+        margin-top : 200px ;
+    }
+
+    .main-screen button {
+        width: 50% ;
+        margin-top : 50px ;
+    }
+
+    .game-screen .leaderboard {
+        width: 90% ;
+    }
+
+    .game-screen .leaderboard .btns {
+        margin-right : 0px ;
+    }
+
+    .game-screen .leaderboard .platforms li::before {
+        margin-top : -65% ;
+    }
+
+    .game-screen .shop {
+        width: 90% ;
+    }
+
+    .game-screen .shop .shop-body {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .game-screen .storage  {
+        width: 90% ;
+    }
+
+    .game-screen .storage .storage-body {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .game-screen .timer { 
+        margin : 20px 40% ;
+    }
+
+    .game-screen .cards-space[data-status="chose-difficulte"] {
+        height : 45vh ;
+        width : 100% ;
+    }
+
+    .game-screen .cards-space[data-status="chose-difficulte"] .chose-difficulte {
+        display : flex ;
+        justify-content: center ;
+        overflow: visible;
+        width : 100% ;
+        padding : 12px 30px ;
+        margin-top : 10px ;
+        margin-left : 50px ;
+    }
+    
+    .game-screen .cards-space .chose-difficulte .title {
+        margin-right : -190px ;
+    }
+
+    .game-screen .cards-space .chose-difficulte ul li {
+        padding: 10px 25px ;
+    }
+
+    .game-screen .powers-menu[data-status="easy"] ,
+    .game-screen .powers-menu[data-status="middly"] ,
+    .game-screen .powers-menu[data-status="hard"]  {
+        position: absolute ;
+        top : 0 ;
+        margin : 31% 20% ;
+        padding: 0px 0px;
+    }
+
+    .game-screen .cards-space[data-status="grid4*2"] {
+        display : grid ;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(4,1fr);
+        grid-template-areas: card;
+        width : 95% ;
+        height : 70vh ;
+        margin : 10px ;
+    }
+
+    .game-screen .cards-space[data-status="grid6*2"] {
+        display : grid ;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(4,1fr);
+        grid-template-areas: card;
+        width : 95% ;
+        height : 70vh ;
+        margin : 10px ;
+    }
+
+    .game-screen .cards-space[data-status="grid8*2"] {
+        display : grid ;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(4,1fr);
+        grid-template-areas: card;
+        width : 95% ;
+        height : 70vh ;
+        margin : 10px ;
+    }  
+
+    .game-screen .cards-space .win-screen ,
+    .game-screen .cards-space .lose-screen {
+        display : flex ;
+        flex-direction: column;
+        direction: rtl ;
+        width : 70% ;
+        height : 60vh ;
+        padding : 12px 30px ;
+    }
+}
+
+@media (min-width : 576px) and (max-width : 767px) {
+    .main-screen .title {
+        font-size: large ;
+    }
+
+    .main-screen input {
+        width : 80% ;
+        margin-top : 200px ;
+    }
+
+    .main-screen button {
+        width: 50% ;
+        margin-top : 50px ;
+    }
+
+    .game-screen .leaderboard {
+        width: 90% ;
+    }
+
+    .game-screen .leaderboard .btns {
+        margin-right : 0px ;
+    }
+
+    .game-screen .leaderboard .platforms li::before {
+        margin-top : -65% ;
+    }
+
+    .game-screen .shop {
+        width: 90% ;
+    }
+
+    .game-screen .shop .shop-body {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .game-screen .storage  {
+        width: 90% ;
+    }
+
+    .game-screen .storage .storage-body {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .game-screen .timer { 
+        margin : 20px 40% ;
+    }
+
+    .game-screen .cards-space[data-status="chose-difficulte"] {
+        height : 45vh ;
+        width : 100% ;
+    }
+
+    .game-screen .cards-space[data-status="chose-difficulte"] .chose-difficulte {
+        display : flex ;
+        justify-content: center ;
+        overflow: visible;
+        width : 100% ;
+        padding : 12px 30px ;
+        margin-top : 10px ;
+        margin-left : 50px ;
+    }
+    
+    .game-screen .cards-space .chose-difficulte .title {
+        margin-right : -190px ;
+    }
+
+    .game-screen .cards-space .chose-difficulte ul li {
+        padding: 10px 25px ;
+    }
+
+    .game-screen .powers-menu[data-status="easy"] ,
+    .game-screen .powers-menu[data-status="middly"] ,
+    .game-screen .powers-menu[data-status="hard"]  {
+        position: absolute ;
+        top : 0 ;
+        margin : 31% 20% ;
+        padding: 0px 0px;
+    }
+
+    .game-screen .cards-space[data-status="grid4*2"] {
+        display : grid ;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(4,1fr);
+        grid-template-areas: card;
+        width : 95% ;
+        height : 70vh ;
+        margin : 10px ;
+    }
+
+    .game-screen .cards-space[data-status="grid6*2"] {
+        display : grid ;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(4,1fr);
+        grid-template-areas: card;
+        width : 95% ;
+        height : 70vh ;
+        margin : 10px ;
+    }
+
+    .game-screen .cards-space[data-status="grid8*2"] {
+        display : grid ;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(4,1fr);
+        grid-template-areas: card;
+        width : 95% ;
+        height : 70vh ;
+        margin : 10px ;
+    }  
+
+    .game-screen .cards-space .win-screen ,
+    .game-screen .cards-space .lose-screen {
+        display : flex ;
+        flex-direction: column;
+        direction: rtl ;
+        width : 70% ;
+        height : 60vh ;
+        padding : 12px 30px ;
+    }
+}
+
+@media (min-width : 767px) and (max-width : 991px) {
+    .game-screen .leaderboard {
+        width: 90% ;
+    }
+
+    .game-screen .leaderboard .btns {
+        margin-right : 40px ;
+    }
+
+    .game-screen .leaderboard .platforms li::before {
+        margin-top : -35% ;
+    }
+
+    .game-screen .shop {
+        width: 90% ;
+    }
+
+    .game-screen .storage  {
+        width: 90% ;
+    }
+
+    .game-screen .timer { 
+        margin : 20px 40% ;
+    }
+
+    .game-screen .cards-space[data-status="chose-difficulte"] {
+        height : 45vh ;
+        width : 100% ;
+    }
+
+    .game-screen .cards-space[data-status="chose-difficulte"] .chose-difficulte {
+        display : flex ;
+        justify-content: center ;
+        overflow: visible;
+        width : 100% ;
+        padding : 12px 30px ;
+        margin-top : 10px ;
+        margin-left : 50px ;
+    }
+    
+    .game-screen .cards-space .chose-difficulte .title {
+        margin-right : -190px ;
+    }
+
+    .game-screen .cards-space .chose-difficulte ul li {
+        padding: 10px 25px ;
+    }
+
+    .game-screen .powers-menu[data-status="easy"] ,
+    .game-screen .powers-menu[data-status="middly"] ,
+    .game-screen .powers-menu[data-status="hard"]  {
+        margin : 15px 60% ;
+        padding: 6px 15px;
+    }
+
+    .game-screen .cards-space[data-status="grid4*2"] {
+        display : grid ;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(4,1fr);
+        grid-template-areas: card;
+        width : 95% ;
+        height : 85vh ;
+        margin : 10px ;
+    }
+
+    .game-screen .cards-space[data-status="grid6*2"] {
+        display : grid ;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(4,1fr);
+        grid-template-areas: card;
+        width : 95% ;
+        height : 70vh ;
+        margin : 10px ;
+    }
+
+    .game-screen .cards-space[data-status="grid8*2"] {
+        display : grid ;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(4,1fr);
+        grid-template-areas: card;
+        width : 95% ;
+        height : 70vh ;
+        margin : 10px ;
+    }  
+
+    .game-screen .cards-space .win-screen ,
+    .game-screen .cards-space .lose-screen {
+        display : flex ;
+        flex-direction: column;
+        direction: rtl ;
+        width : 60% ;
+        height : 45vh ;
+        padding : 6px 15px ;
+    }
+
+    .game-screen .cards-space .win-screen .title ,
+    .game-screen .cards-space .lose-screen .title {
+        margin-bottom : 50px ; 
+    }
+
+    .game-screen .cards-space .win-screen .time-result , 
+    .game-screen .cards-space .lose-screen .time-result{
+        margin-bottom : 30px ;
+    }
+}

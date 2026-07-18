@@ -1,0 +1,69 @@
+* {
+    padding: 0px ;
+    margin: 0px ;
+    font-family: 'Tajawal', sans-serif; 
+    box-sizing: border-box;
+    outline: none ;
+    border : none ;
+    list-style: none ;
+    overflow: hidden ;
+}
+
+:root {
+    --bg-space-dark: #02000a;     
+    --bg-space-purple: #0f052d;    
+    --bg-nebula-glow: #2e1065;     
+    
+    --neon-purple: #8b5cf6;       
+
+    --text-pure-white: #ffffff;  
+
+    --main-shadow : rgb(0, 0, 0 , 0.4) ;
+
+    --start-btn : #00b49d ;
+    --start-btn-hover : #00f5d4 ;
+    --start-btn-active : #00f5d4 ;
+    --start-btn-shadow : rgba(0, 245, 212, 0.8) ;
+    --strt-btn-text : #0b0114 ;
+
+    --btn : #3A3545 ;
+    --btn-hover : #453F52 ;
+    --btn-active : #312D3A ;
+
+    --first : #FFB300 ;
+    --first-hover : #FFC107 ;
+
+    --scound : #E0E6ED ;
+    --scound-hover : #F4F7FA ;
+
+    --threed : #CD7F32;
+    --theerd-hover : #E59849 ;
+
+    --close-btn : #991B1B ;
+    --close-btn-hover : #DC2626 ;
+    --close-btn-active : #7F1D1D ;  
+
+    --easy-level-btn : #1E5631 ;
+    --easy-level-btn-hover : #2A7B45 ;
+    --easy-level-btn-active : #143D22 ;
+
+    --middly-level-btn : #D96B27 ;
+    --middly-level-btn-hover : #F28538 ;
+    --middly-level-btn-active : #A64F1A ;
+
+    --hard-level-btn : #8B0000 ;
+    --hard-level-btn-hover : #A52A2A ;
+    --hard-level-btn-active : #5C0000 ;
+
+    --home-btn : #374151  ;
+    --home-btn-hover : #4b5563 ;
+    --home-btn-active : #1f2937 ;
+
+    --storage-btn : #f59e0b ;
+    --storage-btn-hover : #d97706 ;
+    --storage-btn-active : #b45309 ;
+
+    --used-btn : #eab308 ;
+    --used-btn-hover : #ca8a04 ;
+    --used-btn-active : #a16207 ;  
+}
