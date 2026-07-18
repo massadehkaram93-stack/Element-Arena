@@ -5,7 +5,7 @@ let powerMenu = document.querySelector(".powers-menu");
 let cardsSpace = document.querySelector(".cards-space");
 let timer = document.querySelector(".timer");
 
-function theTimeFrozen  (gameState) {
+function theTimeFrozen  (gameState , turn) {
     gameState.activePowers.freezeTimeUsed = false ;
     render.renderTimer(gameState.timeLeft , true , gameState);
     clearInterval(gameState.currentTimerId);
@@ -20,7 +20,8 @@ function thePlayerWin (gameState , turn) {
     render.renderTimer(gameState.timeLeft , turn , gameState , gameState.stopTheGame);
 }
 
-function falconEyeActive (gameState) {
+function falconEyeActive (gameState , turn) {
+    clearInterval(gameState.currentTimerId);
     gameState.timeBeforeStart = 2 ;
     render.renderTimer(gameState.timeBeforeStart , false , gameState);
     logic.startTheTimer(gameState , false);
@@ -31,13 +32,13 @@ function decreaseTime (gameState , turn) {
     render.renderTimer(gameState.timeLeft , turn , gameState);
 }
 
-function activateTimeShield (gameState) {
+function activateTimeShield (gameState , turn) {
     gameState.activePowers.shieldUsed = true ;
     gameState.activePowers.shieldReady = false ;
     logic.TimeShieldAbility(gameState);
 }
 
-function triggerGameOver (gameState) {
+function triggerGameOver (gameState , turn) {
     if (gameState.activePowers.shieldReady) {
         activateTimeShield(gameState);
     }   else {
@@ -56,18 +57,18 @@ export const logic = {
         clearInterval(gameState.currentTimerId);
 
         const timerTriggers = [
-            {condition: () => gameState.activePowers.freezeTimeUsed , action: () => theTimeFrozen(gameState)},
-            {condition: () => gameState.stopTheGame , action: () => thePlayerWin(gameState , turn)},
-            {condition: () => gameState.activePowers.falconEye , action: (gameState) => falconEyeActive(gameState)},
-            {condition: () => gameState.timeLeft > 0 , action: () => decreaseTime(gameState , turn)},
-            {condition: () => gameState.timeLeft === 0 , action: () => triggerGameOver(gameState)},
+            {condition: () => gameState.activePowers.freezeTimeUsed , action: (gameState , turn) => theTimeFrozen(gameState , turn)},
+            {condition: () => gameState.stopTheGame , action: (gameState , turn) => thePlayerWin(gameState , turn)},
+            {condition: () => gameState.activePowers.falconEye , action: (gameState , turn) => falconEyeActive(gameState , turn)},
+            {condition: () => gameState.timeLeft > 0 , action: (gameState , turn) => decreaseTime(gameState , turn)},
+            {condition: () => gameState.timeLeft === 0 , action: (gameState , turn) => triggerGameOver(gameState , turn)},
         ];
 
         gameState.currentTimerId = setInterval(() => {
             if (turn) {
                 timerTriggers.find(trigger => {
                 if (trigger.condition()) {
-                    trigger.action();
+                    trigger.action(gameState , turn);
                     return true ;
                 }
             });
@@ -364,6 +365,7 @@ export const logic = {
         render.addBlockClickCards();
         render.addBlockClickPowers();
         gameState.activePowers.falconEye = true ;
+        gameState.activePowers.uiAbilites = true ; 
 
         let allCards = document.querySelectorAll(".card-body");
         allCards.forEach((card) => {
@@ -373,6 +375,7 @@ export const logic = {
 
         
         setTimeout(() => {
+        gameState.activePowers.uiAbilites = false ; 
             gameState.activePowers.falconEye = false ;
             allCards.forEach((card) => {
                 card.classList.remove("rotate");
