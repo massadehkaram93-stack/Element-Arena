@@ -133,11 +133,12 @@ function startTheGame (gameState) {
     render.renderGameScreen(gameState.currentLevelName);
     logic.randomCardSelection(allCards , gameState.cardsNumbers);
     render.renderChosedPowers(player , items);
-    render.addBlockClickPowers();
-    render.addBlockClickCards();
     render.renderTimer(gameState.timeBeforeStart , false , gameState);
     logic.startTheTimer(gameState , false);
-    setTimeout(() => {
+    render.addBlockClickPowers();
+    render.addBlockClickCards();
+
+        setTimeout(() => {
         render.removeBlockClickCards();
         render.removeBlockClickPowers();
         render.rotateAllCards();
@@ -171,7 +172,7 @@ function resetRoundAbilities () {
     render.resetRoundAbilitiesUi(gameState);
 }
 
-function choseLeaderboardlevel (e) {
+function choseLeaderboardlevel (e , gameState) {
     let allBtns = document.querySelectorAll(".btns li");
         
     allBtns.forEach((btn) => {
@@ -189,7 +190,7 @@ function choseLeaderboardlevel (e) {
     }
 }
 
-function gameSetup (e) {
+function gameSetup (e , gameState) {
     SelctionCards = [] ;
     let cardsSpace = document.querySelector(".cards-space");
     let timer = document.querySelector(".timer");
@@ -239,7 +240,7 @@ if (player.name != "") {
 
 
 const clicks = {
-    "start-btn" : function (e) {
+    "start-btn" : function (e , gameState) {
         let input = document.querySelector(".start-input");
         if (input.value !== "" && input.value.length !== 0) {
             player.name = input.value ;
@@ -255,7 +256,7 @@ const clicks = {
         }
     },
 
-    "open-leaderboard" : function (e) {
+    "open-leaderboard" : function (e , gameStatee) {
         let allBtns = document.querySelectorAll(".btns li");
         
         allBtns.forEach((btn) => {
@@ -269,34 +270,34 @@ const clicks = {
         render.openMenu(leaderboard2);
     },
 
-    "close-leaderboard" : function (e) {
+    "close-leaderboard" : function (e , gameState) {
         let leaderboard = document.querySelector(".leaderboard");
         render.closeMenu(leaderboard);
     },
 
-    "open-shop" : function (e) {
+    "open-shop" : function (e , gameState) {
         let Shop = document.querySelector(".shop");
         render.renderShop(items , player);
         render.openMenu(Shop);
     },
 
-    "close-shop" : function (e) {
+    "close-shop" : function (e , gameState) {
         let Shop = document.querySelector(".shop");
         render.closeMenu(Shop);
     },
 
-    "open-storage" : function (e) {
+    "open-storage" : function (e , gameState) {
         let storage = document.querySelector(".storage");
         render.renderStorage(player , items);
         render.openMenu(storage);
     },
 
-    "close-storage" : function (e) {
+    "close-storage" : function (e , gameState) {
         let storage = document.querySelector(".storage");
         render.closeMenu(storage);
     },
 
-    "home-btn" : function (e) {
+    "home-btn" : function (e , gameState) {
         resetRoundAbilities();
         logic.syncEquippedPowers(player);
         saveMoney(gameState.roundCoins);
@@ -304,7 +305,7 @@ const clicks = {
         render.renderDifficulteMenu();
     } ,
 
-    "buy-btn" : function (e) {
+    "buy-btn" : function (e , gameState) {
         let card = e.target.closest(".card");
         if (card.dataset.status == "available") {
             playSound(sounds.buy);
@@ -317,7 +318,7 @@ const clicks = {
         } , 1000);
     },
 
-    "use-btn" : function (e) {
+    "use-btn" : function (e , gameState) {
         let card = e.target.closest(".card") ;
         let item = items.find((item) => {
             if (item.title === card.dataset.title) {
@@ -331,7 +332,7 @@ const clicks = {
     "middly-level" : choseLeaderboardlevel,
     "hard-level" : choseLeaderboardlevel,
 
-    "front-img" : function (e) {
+    "front-img" : function (e , gameState) {
         playSound(sounds.click);
         let mainCard = e.target.closest(".card") ;
         mainCard.classList.remove("flipped");
@@ -341,7 +342,7 @@ const clicks = {
 
     //  كل شي الو علاقة بالريندر فوق و اللوجيك تحت الكومنت
 
-    "back-img" : function(e) {
+    "back-img" : function(e , gameState) {
         playSound(sounds.click);
         let card = e.target.closest(".card");
         if (!e.target.closest(".card").classList.contains("flipped")) {
@@ -362,7 +363,7 @@ const clicks = {
     "hard" : gameSetup,
     "replay-btn" : gameSetup,
 
-    "power-img" : function (e) {
+    "power-img" : function (e , gameState) {
         if (!gameState.canUsePower) return;
 
         let elementPower = e.target.closest(".power-icon") ;
@@ -401,7 +402,7 @@ const clicks = {
 window.addEventListener("click" , function (e) {
     for (let className of e.target.classList) {
         if (clicks[className]) {
-            clicks[className] (e) ;
+            clicks[className] (e , gameState) ;
             break ;
         }
     }
@@ -420,3 +421,4 @@ document.addEventListener("DOMContentLoaded", () => {
     logic.syncEquippedPowers(player);
     saveMoney(gameState.roundCoins);
 });
+
