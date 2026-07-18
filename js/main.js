@@ -73,9 +73,9 @@ let allCards = [
 ];
 
 let levels = {
-    easy:{title:"easy" , time:10 , timeBeforeFlip:1 , cardsNumbers:8 , cardsToMatch:4 , win:30 , lose:10 , dataAttr:"grid4*2"},
-    middly:{title:"middly" ,time:15 , timeBeforeFlip:2 , cardsNumbers:12 , cardsToMatch:6 , win:50 , lose:15 , dataAttr:"grid6*2"},
-    hard:{title:"hard" ,time:20 , timeBeforeFlip:3 , cardsNumbers:16 , cardsToMatch:8 , win:100 , lose:20 , dataAttr:"grid8*2"},
+    easy:{title:"easy" , time:20 , timeBeforeFlip:3 , cardsNumbers:8 , cardsToMatch:4 , win:30 , lose:10 , dataAttr:"grid4*2"},
+    middly:{title:"middly" ,time:25 , timeBeforeFlip:3 , cardsNumbers:12 , cardsToMatch:6 , win:50 , lose:15 , dataAttr:"grid6*2"},
+    hard:{title:"hard" ,time:30 , timeBeforeFlip:3 , cardsNumbers:16 , cardsToMatch:8 , win:100 , lose:20 , dataAttr:"grid8*2"},
 };
 
 const gameState = {
