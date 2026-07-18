@@ -253,12 +253,14 @@ export const render = {
     },
 
     addBlockClickCards: () => {
+    let allCards = document.querySelectorAll(".card");
         allCards.forEach((card) => {
             card.classList.add("block");
         });
     },
 
     removeBlockClickCards: () => {
+    let allCards = document.querySelectorAll(".card");
         allCards.forEach((card) => {
             card.classList.remove("block");
         });
