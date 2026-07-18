@@ -51,14 +51,6 @@ let leaderboard = JSON.parse(localStorage.getItem("leaderboard") || `{
         "hard": []
 }`);
 
-leaderboard.easy = [
-    {time:4 , level:"easy"},
-    {time:6 , level:"easy"},
-    {time:9 , level:"easy"},
-];
-
-localStorage.setItem("leaderboard" , JSON.stringify(leaderboard));
-
 let items  = [
     {title:"درع الوقت" , image:"imgs/Time Shield.jpg" , description:"فعّل الدرع لتحصل على فرصة نجاة واحدة. عند انتهاء الوقت أثناء تفعيل الدرع، لن تخسر وستحصل على 5 ثوانٍ إضافية" , amount:1 , price:200 , id:"Time Shield" , fn: (gameState) => logic.TimeShieldAbility(gameState)},
     {title:"الألقاء السحري" , image:"imgs/Magical casting.jpg" , description:"تقوم بأخراج بطاقتين من الجولة" , amount:1 , price:150 , id:"Magical casting" , fn: (gameState) => logic.magicalCastingAbility(gameState)},
