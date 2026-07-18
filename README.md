@@ -11,7 +11,12 @@ Element Arena transforms the classic memory card game into a strategic experienc
 
 # 🎮 Live Demo
 
-> سيتم إضافة الرابط بعد رفع اللعبة على GitHub Pages.
+<p align="center">
+  <a href="https://massadehkaram93-stack.github.io/Element-Arena/" target="_blank">
+     <img src="./imgs/game icon.jpg" alt="اضغط هنا لتشغيل اللعبة" width="600" style="border-radius: 10px;">
+  </a>
+</p>
+
 
 ---
 
