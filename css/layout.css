@@ -645,7 +645,7 @@
     }
 
     .game-screen .cards-space[data-status="chose-difficulte"] {
-        height : 45vh ;
+        height : max-content ;
         width : 100% ;
     }
 
@@ -765,7 +765,7 @@
     }
 
     .game-screen .cards-space[data-status="chose-difficulte"] {
-        height : 45vh ;
+        height : max-content ;
         width : 100% ;
     }
 
