@@ -655,7 +655,7 @@
         overflow: visible;
         width : 100% ;
         padding : 12px 30px ;
-        margin-top : 30px ;
+        margin-top : 10px ;
         margin-left : 50px ;
     }
     
@@ -681,10 +681,10 @@
         grid-template-columns: repeat(2,1fr);
         grid-template-rows: repeat(4,1fr);
         grid-template-areas: card;
-        width : 90% ;
-        height : 70vh ;
+        width : 95% ;
+        height : 65h ;
         margin : 10px ;
-        margin-bottom : 5%;
+        margin-bottom : 5vh ;
     }
 
     .game-screen .cards-space[data-status="grid6*2"] {
@@ -692,10 +692,10 @@
         grid-template-columns: repeat(3,1fr);
         grid-template-rows: repeat(4,1fr);
         grid-template-areas: card;
-        width : 90% ;
-        height : 70vh ;
+        width : 95% ;
+        height : 65vh ;
         margin : 10px ;
-        margin-bottom : 5%;
+        margin-bottom : 5vh ;
     }
 
     .game-screen .cards-space[data-status="grid8*2"] {
@@ -703,10 +703,9 @@
         grid-template-columns: repeat(4,1fr);
         grid-template-rows: repeat(4,1fr);
         grid-template-areas: card;
-        width : 90% ;
+        width : 95% ;
         height : 70vh ;
         margin : 10px ;
-        margin-bottom : 5%;
     }  
 
     .game-screen .cards-space .win-screen ,
@@ -778,7 +777,7 @@
         overflow: visible;
         width : 100% ;
         padding : 12px 30px ;
-        margin-top : 30px ;
+        margin-top : 10px ;
         margin-left : 50px ;
     }
     
@@ -804,10 +803,10 @@
         grid-template-columns: repeat(2,1fr);
         grid-template-rows: repeat(4,1fr);
         grid-template-areas: card;
-        width : 92% ;
-        height : 70vh ;
+        width : 95% ;
+        height : 65vh ;
         margin : 10px ;
-        margin-bottom : 3%;
+        margin-bottom : 5vh ;
     }
 
     .game-screen .cards-space[data-status="grid6*2"] {
@@ -815,10 +814,10 @@
         grid-template-columns: repeat(3,1fr);
         grid-template-rows: repeat(4,1fr);
         grid-template-areas: card;
-        width : 92% ;
-        height : 70vh ;
+        width : 95% ;
+        height : 65vh ;
         margin : 10px ;
-        margin-bottom : 3%;
+        margin-bottom : 5vh ;
     }
 
     .game-screen .cards-space[data-status="grid8*2"] {
@@ -826,10 +825,10 @@
         grid-template-columns: repeat(4,1fr);
         grid-template-rows: repeat(4,1fr);
         grid-template-areas: card;
-        width : 92% ;
-        height : 70vh ;
+        width : 95% ;
+        height : 65vh ;
         margin : 10px ;
-        margin-bottom : 3%;
+        margin-bottom : 5vh ;
     }  
 
     .game-screen .cards-space .win-screen ,
@@ -923,9 +922,10 @@
         grid-template-columns: repeat(4,1fr);
         grid-template-rows: repeat(4,1fr);
         grid-template-areas: card;
-        width : 95% ;
+        width : 90% ;
         height : 70vh ;
         margin : 10px ;
+        margin-bottom : 5% ;
     }  
 
     .game-screen .cards-space .win-screen ,
