@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="icon" href="./imgs/game icon.jpg" type = "image/x-icon">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/main.css">
+        <title>📜 ميدان العناصر</title>
+    </head>
+
+    <body>
+
+        <section class="main-screen none">
+            
+            <h1 class="title">✨ أهلاً بك في لعبة ميدان العناصر 🔮</h1>
+
+            <form action="#" id="user-name-form">
+                <input type="text" placeholder="اكتب اسم البطل هنا" class = "start-input">
+            </form>
+
+            <button type = "submit" form="user-name-form" class = "start-btn">افتح البوابة</button>
+
+        </section>
+
+        <section class="loading-screen none">
+
+            <h2 class = "title">جاري التحميل</h2>
+
+            <div class = "loud">
+                <div class = "one"></div>
+                <div class = "two"></div>
+                <div class = "three"></div>
+            </div>
+
+        </section>
+
+        <section class="game-screen none">
+
+            <h1 class = "user-name">✨ اهلا بك,</h1>
+
+            <div class="side-menu">
+
+                <form action="#" id = "Money-form">
+                    <input type="text" id ="Money" readonly value = "0" >
+                    <label for="Money"><svg width="25" viewBox="0 0 100 100" xmlns="http://w3.org">
+                        <circle cx="50" cy="50" r="45" fill="#FFD700" stroke="#DAA520" stroke-width="5"/>
+                        <circle cx="50" cy="50" r="35" fill="none" stroke="#B8860B" stroke-width="2" stroke-dasharray="5,3"/>
+                        <polygon points="50,25 57,40 73,42 61,54 65,70 50,62 35,70 39,54 27,42 43,40" fill="#FFF799" stroke="#B8860B" stroke-width="1"/>
+                        </svg>
+                    </label>
+                </form>
+                
+                <div class="leaderboard-menu">
+                    <button class = "open-leaderboard "> لوحة الصدارة</button>
+                </div>
+
+                <div class="shop-menu">
+                    <button class = "open-shop ">المتجر</button>
+                </div>
+
+                <div class="storage-menu">
+                    <button class = "open-storage ">المخزن</button>
+                </div>
+
+            </div>
+            
+            <div class="leaderboard none">
+                
+                <button class = "close-leaderboard">✖</button>
+
+                <ul class = "btns">
+                    <li class = "hard-level">صعب</li>
+                    <li class = "middly-level">متوسط</li>
+                    <li class = "easy-level active">سهل</li>
+                </ul>
+
+                <ul class = "platforms">
+                    <li class = "scound" data-score = "---">2</li>
+                    <li class = "first" data-score = "---">1</li>
+                    <li class = "theerd" data-score = "---">3</li>
+                </ul>
+
+            </div>
+
+            <div class="shop none">
+
+                <button class="close-shop">✖</button>
+
+                <h1 class = "title">المتجر</h1>
+
+                <div class="shop-body">
+
+                </div>
+
+            </div>
+
+            <div class="storage none">
+
+                <button class="close-storage">✖</button>
+
+                <h1 class = "title">المخزن</h1>
+
+                <div class="storage-body">
+
+                </div>
+                
+                
+            </div>
+            
+            <div class="ui-overlay none"></div>
+            
+            <div class="timer none" data-color = "white"><span>⌛</span> 5 </div>
+            
+            <div class="powers-menu none" data-status ="none">
+
+            </div>
+            
+            <div class="cards-space" data-status="chose-difficulte" >
+
+                <div class="chose-difficulte">
+
+                    <h3 class="title">اختر الصعوبة</h3>
+
+                    <ul>
+                        <li class="hard">صعب</li>
+                        <li class="middly">متوسط</li>
+                        <li class="easy">سهل</li>
+                    </ul>
+
+                </div>
+
+                
+            </div>
+            
+        </section>
+
+        <script type="module" src = "./js/main.js"></script>
+    </body>
+</html>
