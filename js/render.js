@@ -194,9 +194,13 @@ export const render = {
                     cardsSpace.classList.add("danger");
                 }
             }
-            timer.innerHTML = `<span>⌛</span> ${time}`;
         }
         
+        if (!gameState.activePowers.lightningSpeedUi && !gameState.activePowers.freezeTimeUi && !gameState.activePowers.shieldUi) {
+            timer.innerHTML = `<span>⌛</span> ${time}`;
+        }
+
+
         if (time === 0 && gameState.activePowers.foucs) {
             gameState.activePowers.foucs = false;
         }
