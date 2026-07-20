@@ -238,7 +238,7 @@ export const render = {
             return `<div class="card" data-type="${card.type}">
                             <div class="card-body rotate">
                                 <div class="front"><img src='${card.image}' alt="" class="front-img"></div>
-                                <div class="back"><img src="imgs/The card appeared.png" alt="" class = "back-img"></div>
+                                <div class="back"><img src="./imgs/The card appeared.jpg" alt="" class = "back-img"></div>
                             </div>
                     </div>`
         }).join("");
