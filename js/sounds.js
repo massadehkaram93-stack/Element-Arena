@@ -15,7 +15,7 @@ export const sounds = {
     compass: new Audio("./sounds/compass.mp3"),
     lightning: new Audio("./sounds/Lightning.mp3"),
     focus: new Audio("./sounds/foucs.mp3"),
-    magic: new Audio("./sounds/Magical_casting.mp3"),
+    magic: new Audio("./sounds/Digital_Delete.mp3"),
 };
 
 export function playSound (sound) {
