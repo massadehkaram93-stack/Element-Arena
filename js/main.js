@@ -12,8 +12,8 @@ let player = JSON.parse(localStorage.getItem("player") || `{
             "amount": 0
         },
         {
-            "title": "الألقاء السحري",
-            "id": "Magical casting",
+            "title": "الحذف الرقمي",
+            "id": "Digital Delete",
             "amount": 0
         },
         {
@@ -53,7 +53,7 @@ let leaderboard = JSON.parse(localStorage.getItem("leaderboard") || `{
 
 let items  = [
     {title:"درع الوقت" , image:"imgs/Time Shield.jpg" , description:"فعّل الدرع لتحصل على فرصة نجاة واحدة. عند انتهاء الوقت أثناء تفعيل الدرع، لن تخسر وستحصل على 5 ثوانٍ إضافية" , amount:1 , price:200 , id:"Time Shield" , fn: (gameState) => logic.TimeShieldAbility(gameState)},
-    {title:"الألقاء السحري" , image:"imgs/Magical casting.jpg" , description:"تقوم بأخراج بطاقتين من الجولة" , amount:1 , price:150 , id:"Magical casting" , fn: (gameState) => logic.magicalCastingAbility(gameState)},
+    {title:"الحذف الرقمي" , image:"imgs/Digital Delete.jpg" , description:"تقوم بأخراج بطاقتين من الجولة" , amount:1 , price:150 , id:"Digital Delete" , fn: (gameState) => logic.digitalDeleteAbility(gameState)},
     {title:"عين الصقر" , image:"imgs/Falcon Eye.jpg" , description:"تكشف جميع الكروت لمدة ثانيتين" , amount:2 , price:100 , id:"Falcon Eye" , fn: (gameState) => logic.falconEyeAbility(gameState)},
     {title:"تجميد الوقت" , image:"imgs/Freeze time.jpg" , description:"يقوم بتجميد المؤقت لمدة خمس ثواني" , amount:3 , price:75 , id:"Freeze time" ,  fn: (gameState) => logic.freezeTimeAbility(gameState)}, 
     {title:"التركيز" , image:"imgs/the focus.jpg" , description:"يعطل تأثيرات التحذير والنبض عند اقتراب انتهاء الوقت" , amount:3 , price:60 , id:"the focus" , fn: (gameState) => logic.foucsAbility(gameState)}, 
@@ -421,4 +421,3 @@ document.addEventListener("DOMContentLoaded", () => {
     logic.syncEquippedPowers(player);
     saveMoney(gameState.roundCoins);
 });
-
