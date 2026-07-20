@@ -51,6 +51,64 @@ let leaderboard = JSON.parse(localStorage.getItem("leaderboard") || `{
         "hard": []
 }`);
 
+let Update = JSON.parse(localStorage.getItem("Update") || "true") ;   
+
+if (Update) {
+    player = {
+        name: "",
+        coins: 1000,
+        inventory: [
+        { 
+            title: "درع الوقت", 
+            id: "Time Shield", 
+            amount: 0 
+        },
+
+        { 
+            title: "الحذف الرقمي", 
+            id: "Digital Delete", 
+            amount: 0 
+        },
+
+        { 
+            title: "عين الصقر", 
+            id: "Falcon Eye", 
+            amount: 0 
+        },
+
+        {
+            title: "تجميد الوقت", 
+            id: "Freeze time", 
+            amount: 0 
+        },
+
+        { 
+            title: "التركيز", 
+            id: "the focus",
+            amount: 0 
+        },
+
+        {
+            title: "البوصلة", 
+            id: "compass", 
+            amount: 0
+        },
+
+        { 
+            title: "سرعة البرق", 
+            id: "lightning speed", 
+            amount: 0 
+        },
+
+        ],
+
+        equippedPowers: [],
+    }
+
+    Update = false ;
+    localStorage.setItem("Update" , JSON.stringify(Update));
+};
+
 let items  = [
     {title:"درع الوقت" , image:"imgs/Time Shield.jpg" , description:"فعّل الدرع لتحصل على فرصة نجاة واحدة. عند انتهاء الوقت أثناء تفعيل الدرع، لن تخسر وستحصل على 5 ثوانٍ إضافية" , amount:1 , price:200 , id:"Time Shield" , fn: (gameState) => logic.TimeShieldAbility(gameState)},
     {title:"الحذف الرقمي" , image:"imgs/Digital Delete.jpg" , description:"تقوم بأخراج بطاقتين من الجولة" , amount:1 , price:150 , id:"Digital Delete" , fn: (gameState) => logic.digitalDeleteAbility(gameState)},
@@ -111,6 +169,7 @@ let SelctionCards = [] ;
 
 let mainScreen = document.querySelector(".main-screen");
 let gameScreen = document.querySelector(".game-screen");
+
 
 
 function handlePairSelection () {
