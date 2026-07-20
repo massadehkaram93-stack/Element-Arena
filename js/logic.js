@@ -170,7 +170,7 @@ export const logic = {
 
     getShopCardsStatus: (item , player) => {
         let theItem = player.inventory.find((ele) => {
-            if (item.title === ele.title){
+            if (item.id === ele.id){
                 return ele ;
             }
         });
@@ -333,7 +333,7 @@ export const logic = {
         }
     },
 
-    magicalCastingAbility: (gamestate) => {
+    digitalDeleteAbility: (gamestate) => {
         let card = document.querySelector(".cards-space .card:not(.matched)");
         let allCards = document.querySelectorAll(".cards-space .card");
 
